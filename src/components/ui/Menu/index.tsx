@@ -1,26 +1,13 @@
 "use client";
 
-import { createContext, PropsWithChildren, ReactNode, useContext } from "react";
+import { PropsWithChildren, ReactNode } from "react";
+import { MenuContext } from "./Menu";
 
-export type MenuContextProps = {};
-
-const MenuContext = createContext<(MenuProps & MenuContextProps) | undefined>(
-  undefined
-);
-
-export function useMenuContext() {
-  const context = useContext(MenuContext);
-  if (!context) {
-    throw new Error("useMenuContext must be used within a MenuContextProvider");
-  }
-  return context;
-}
-
-export type MenuProps = PropsWithChildren & {
+export default function Menu({
+  menuList,
+}: PropsWithChildren & {
   menuList: { icon?: ReactNode; name: string }[];
-};
-
-export default function Menu({ menuList }: MenuProps) {
+}) {
   return (
     <MenuContext.Provider value={{ menuList }}>
       <ul
@@ -37,12 +24,13 @@ export default function Menu({ menuList }: MenuProps) {
   );
 }
 
-interface MenuItemProps {
+Menu.Item = function MenuItem({
+  children,
+  icon,
+}: {
   children: ReactNode;
   icon: ReactNode;
-}
-
-Menu.Item = function MenuItem({ children, icon }: MenuItemProps) {
+}) {
   return (
     <li className="flex flex-row gap-8 items-center justify-start px-9 group-hover:pr-14 py-8 hover:bg-[#1f1f1f] w-full">
       {icon}

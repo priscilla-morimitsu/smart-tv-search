@@ -9,7 +9,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Tuple } from ".";
+import { Tuple } from "./GridNavigation";
 
 export type GridItemProps = {
   id: number;

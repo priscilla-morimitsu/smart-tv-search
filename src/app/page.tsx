@@ -1,11 +1,11 @@
 "use client";
 
-import GridNavigation from "@/components/grid-navigation";
+import GridNavigation from "@/components/ui/GridNavigation/GridNavigation";
 import MarkupGrid, {
   GridRowProps,
-} from "@/components/grid-navigation/markup-grid";
-import Keyboard from "@/components/keyboard";
-import Menu from "@/components/menu";
+} from "@/components/ui/GridNavigation/MarkupGrid";
+import Keyboard from "@/components/ui/Keyboard";
+import Menu from "@/components/ui/Menu";
 import { menuItems } from "@/mocks/menu";
 import { markupGridMock } from "@/mocks/titles";
 import { useCallback, useEffect, useState } from "react";

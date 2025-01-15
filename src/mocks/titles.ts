@@ -1,4 +1,4 @@
-import { GridRowProps } from "@/components/grid-navigation/markup-grid";
+import { GridRowProps } from "@/components/ui/GridNavigation/MarkupGrid";
 
 export const titlesImages: GridRowProps = {
   titleRow: "Títulos",
